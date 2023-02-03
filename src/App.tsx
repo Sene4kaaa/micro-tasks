@@ -1,29 +1,44 @@
 import React from 'react';
-import './App.css';
-import {NewComponent} from "./NewComponent";
+import './App.css'
+
 
 
 function App() {
+    // const myFirstSubscriber = (event:MouseEvent<HTMLButtonElement>) => {
+    //     console.log('Hello Im Vasia!')
+    // }
+    //
+    // const mySecondSubscriber = (event:MouseEvent<HTMLButtonElement> => {
+    //     console.log('Hello Im Ivan!')
+    // }
 
-    const students = [
-        {id: 1, name: "James", age: 8},
-        {id: 2, name: "Robert", age: 18},
-        {id: 3, name: "John", age: 28},
-        {id: 4, name: "Michael", age: 38},
-        {id: 5, name: "William", age: 48},
-        {id: 6, name: "David", age: 58},
-        {id: 7, name: "Richard", age: 68},
-        {id: 8, name: "Joseph", age: 78},
-        {id: 9, name: "Thomas", age: 88},
-        {id: 10, name: "Charles", age: 98},
-        {id: 11, name: "Christopher", age: 100},
-    ]
+  /*  const onClickHandler= (name:string)=>{
+       console.log(name)
+    }*/
+    const foo1 = () => {
+// ничего не передавать,но в консоли должно показаться 100200
+        console.log(100200)
+    }
+
+    const foo2 = (num:number) => {
+//передать цифру 100200
+console.log(num)
+    }
 
     return (
-        <>
-            <NewComponent title={students}/>
-        </>
+        <div className="App">
+      {/* <button onClick={(event)=>{.log('Hello')}}>MyYouTubeChanel-1</button>*/}
+      {/* <button onClick={myFirstSubscriber}>MyYouTubeChanel-1</button>*/}
+      {/* <button onClick={(event) => onClickHandler('Vasia')}>MyYouTubeChanel-1</button>
+       <button onClick={(event)=>onClickHandler('Ivan')}>MyYouTubeChanel-2</button>
+       <button onClick={()=>onClickHandler('some info')}>MyYouTubeChanel-3</button>*/}
+
+            <button onClick={foo1}>1</button>
+            <button onClick={()=>foo2(100200)}>2</button>
+  </div>
+
     );
+
 }
 
 export default App;
